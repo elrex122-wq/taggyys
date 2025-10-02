@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taggy Stickers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 🔹 Barra de navegación (sin enlace a login/registro) -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo Taggy">
+      <h1>Taggy Stickers</h1>
+    </div>
+    <ul>
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="#carrito">Carrito <span class="badge" id="cart-count">0</span></a></li>
+    </ul>
+  </nav>
+
+  <!-- 🔹 Encabezado con carrusel -->
+  <header class="header">
+    <h2>Stickers Destacados</h2>
+
+    <div class="carousel" aria-roledescription="carousel">
+      <button class="carousel-btn left" type="button" aria-label="Imagen anterior" data-dir="-1">&#10094;</button>
+      <img id="carousel-img" src="img/imagen_promocional1.jpg" alt="Promoción de stickers" class="banner-img" loading="eager">
+      <button class="carousel-btn right" type="button" aria-label="Imagen siguiente" data-dir="1">&#10095;</button>
+    </div>
+  </header>
+
+  <!-- 🚀 Pedido personalizado -->
+  <section id="pedido-personalizado" class="pedido-box">
+    <h2>📦 Pedido Personalizado</h2>
+    <form id="pedidoForm">
+      <input type="text" id="nombreCliente" placeholder="Tu nombre" required>
+      <input type="email" id="emailCliente" placeholder="Tu correo" required>
+      <textarea id="detallePedido" rows="4" placeholder="Describe tu pedido especial..." required></textarea>
+      <button type="submit">Enviar Pedido</button>
+      <p class="form-msg" id="pedido-msg" aria-live="polite"></p>
+      <p>si tienes un diseño que te gustaría volver sticker mándalo a nuestro correo</p>
+      <p><b>taggystickerscompany@gmail.com</b></p>
+    </form>
+  </section>
+
+  <!-- 🔹 Contenedor de Stickers (Pirámide dinámica) -->
+  <h2 class="titulo-destacados" style="display:block; width:100%; text-align:center; margin:40px 0 20px; color:#ff9800; font-size:2rem; font-weight:bold;">✨ Destacados ✨</h2>
+  <main class="sticker-container" id="stickerContainer" aria-live="polite"></main>
+
+  <!-- 🔹 Carrito de Compras -->
+  <div class="carrito-box" id="carrito">
+    <h3>🛒 Carrito de Compras</h3>
+    <ul class="carrito-list" id="cart-items"></ul>
+    <p id="total">Total: $0</p>
+    <button id="comprarBtn" class="btn-comprar" type="button">Comprar</button>
+  </div>
+
+  <!-- 🔹 Sección Misión y Visión -->
+  <section class="mision-vision">
+    <div class="contenido-mv">
+      <h2>Nuestra Misión</h2>
+      <p>En Taggy Stickers buscamos inspirar creatividad y diversión a través de stickers personalizados, ofreciendo calidad, innovación y cercanía con cada cliente.</p>
+    </div>
+    <div class="contenido-mv">
+      <h2>Nuestra Visión</h2>
+      <p>Convertirnos en la marca de stickers más reconocida de América Latina, expandiendo nuestra creatividad a cada rincón del mundo.</p>
+    </div>
+  </section>
+
+  <!-- Redes sociales -->
+  <div class="redes-sociales-final">
+    <a href="https://www.instagram.com/taggy.sas?igsh=bm5oOTM1OXZ5eDhr" target="_blank">
+      <img src="img/instagram.png" alt="Instagram">
+    </a>
+    <a href="https://www.tiktok.com/@taggy.sas?_t=ZS-8yWnpWkiE0Q&_r=1" target="_blank">
+      <img src="img/tiktok.png" alt="TikTok">
+    </a>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

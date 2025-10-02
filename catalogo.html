@@ -1,0 +1,385 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Catálogo Stickers</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .main-header {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 30px 0;
+    color: #ff6600;
+    font-family: 'Fredoka One', cursive;
+  }
+
+  .grupo {
+    margin: 20px auto;
+    padding: 15px;
+    width: 80%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .grupo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+  }
+
+  .grupo-header button {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .grupo-contenido {
+    display: none;
+    margin-top: 15px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+  }
+
+  .grupo-contenido.activo {
+    display: grid;
+  }
+
+  .producto {
+    text-align: center;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .producto img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .producto h3 {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #ff6600;
+  }
+
+  .producto p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+
+  .producto button {
+    background: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  /* 🔹 Portadas de categorías adaptadas */
+  .portada-categoria {
+    width: 100%;
+    height: 160px;        /* altura uniforme */
+    object-fit: cover;    /* recorta sin deformar */
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: block;
+  }
+
+  /* 🔹 Ajuste responsive para móviles */
+  @media (max-width: 768px) {
+    .grupo-contenido {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .portada-categoria {
+      height: 120px;  /* más pequeñas en celular */
+    }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo"><img src="img/logo.png" alt=""><h1>Taggy Stickers</h1></div>
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    
+    <li><a href="catalogo.html" class="active">Catálogo</a></li>
+    <li><a href="index.html#carrito">Carrito <span class="badge" id="cart-count">0</span></a></li>
+    
+
+  </ul>
+</nav>
+
+<header class="main-header">Catálogo Completo</header>
+
+
+<!-- 🔹 Grupo Halloween 1 -->
+<div class="grupo">
+  <img src="img/portada-halloween1.jpg" alt="Portada Halloween 1" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Halloween:1🎃</span>
+    <button onclick="toggleGrupo('grupoH1')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupoH1">
+    <div class="producto"><img src="img/halloween/calabaza1.jpg"><h3>wasaa</h3><p>$1200</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/halloween/calabaza2.jpg"><h3>payasogenerico</h3><p>$1300</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/halloween/calabaza3.jpg"><h3>calabaza mala</h3><p>$1500</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/halloween/calabaza4.jpg"><h3>mano ensangrentada</h3><p>$1400</p><button>Añadir</button></div>
+  </div>
+</div>
+
+
+<!-- 🔹 Grupo 1 -->
+<div class="grupo">
+  <img src="img/portada-db.jpg" alt="Portada Dragon Ball" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Dragon Ball</span>
+    <button onclick="toggleGrupo('grupo1')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo1">
+    <div class="producto"><img src="img/img_db1.jpg"><h3>Goku</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/db2.jpg"><h3>Vegeta</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/db3.jpg"><h3>Gohan</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/db4.jpg"><h3>Piccolo</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 2 -->
+<div class="grupo">
+  <img src="img/portada-gumball.jpg" alt="Portada Gumball" class="portada-categoria">
+  <div class="grupo-header">
+    <span>El Increíble Mundo de Gumball</span>
+    <button onclick="toggleGrupo('grupo2')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo2">
+    <div class="producto"><img src="img/gumball1.jpg"><h3>Gumball</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/gumball2.jpg"><h3>Darwin</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/gumball3.jpg"><h3>Anais</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/gumball4.jpg"><h3>Richard</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 3 -->
+<div class="grupo">
+  <img src="img/portada-sanrio.jpg" alt="Portada Sanrio" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Sanrio</span>
+    <button onclick="toggleGrupo('grupo3')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo3">
+    <div class="producto"><img src="img/sanrio1.jpg"><h3>Hello Kitty</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/sanrio2.jpg"><h3>My Melody</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/sanrio3.jpg"><h3>Cinnamoroll</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/sanrio4.jpg"><h3>Kuromi</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 4 -->
+<div class="grupo">
+  <img src="img/portada-brainrots.jpg" alt="Portada Brainrots" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Brainrots</span>
+    <button onclick="toggleGrupo('grupo4')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo4">
+    <div class="producto"><img src="img/brain1.jpg"><h3>Meme 1</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/brain2.jpg"><h3>Meme 2</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/brain3.jpg"><h3>Meme 3</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/brain4.jpg"><h3>Meme 4</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 5 -->
+<div class="grupo">
+  <img src="img/portada-hora.jpg" alt="Portada Hora de Aventura" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Hora de Aventura</span>
+    <button onclick="toggleGrupo('grupo5')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo5">
+    <div class="producto"><img src="img/hora1.jpg"><h3>Finn</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/hora2.jpg"><h3>Jake</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/hora3.jpg"><h3>BMO</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/hora4.jpg"><h3>Princesa Chicle</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 6 -->
+<div class="grupo">
+  <img src="img/portada-fnaf.jpg" alt="Portada FNAF" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Five Nights at Freddy’s</span>
+    <button onclick="toggleGrupo('grupo6')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo6">
+    <div class="producto"><img src="img/fnaf1.jpg"><h3>Freddy</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/fnaf2.jpg"><h3>Chica</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/fnaf3.jpg"><h3>Bonnie</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/fnaf4.jpg"><h3>Foxy</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 7 -->
+<div class="grupo">
+  <img src="img/portada-bajo.jpg" alt="Portada Bajoterra" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Bajoterra</span>
+    <button onclick="toggleGrupo('grupo7')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo7">
+    <div class="producto"><img src="img/bajo1.jpg"><h3>Slug 1</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bajo2.jpg"><h3>Slug 2</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bajo3.jpg"><h3>Slug 3</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bajo4.jpg"><h3>Slug 4</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 8 -->
+<div class="grupo">
+  <img src="img/portada-vibes.jpg" alt="Portada Good Vibes" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Good Vibes</span>
+    <button onclick="toggleGrupo('grupo8')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo8">
+    <div class="producto"><img src="img/vibes1.jpg"><h3>Peace</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/vibes2.jpg"><h3>Smile</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/vibes3.jpg"><h3>Love</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/vibes4.jpg"><h3>Chill</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 9 -->
+<div class="grupo">
+  <img src="img/portada-brawl.jpg" alt="Portada brawl stars" class="portada-categoria">
+  <div class="grupo-header">
+    <span>brawl stars</span>
+    <button onclick="toggleGrupo('grupo9')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo9">
+    <div class="producto"><img src="img/stickerb1.jpg"><h3>el primo</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/stickerb2.jpg"><h3>leon</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/stickerb3.jpg"><h3>sheely</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/stickerb4.jpg"><h3>spike</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 10 -->
+<div class="grupo">
+  <img src="img/portada-bochi.jpg" alt="Portada bochi" class="portada-categoria">
+  <div class="grupo-header">
+    <span>bochi the rock</span>
+    <button onclick="toggleGrupo('grupo10')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo10">
+    <div class="producto"><img src="img/bochi1.jpg"><h3>bochii</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bochi2.jpg"><h3>kita</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bochi3.jpg"><h3>nijika</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/bochi4.jpg"><h3>ryo</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 11: Barbie -->
+<div class="grupo">
+  <img src="img/portada-barbie.jpg" alt="Portada Barbie" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Barbie</span>
+    <button onclick="toggleGrupo('grupo11')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo11">
+    <div class="producto"><img src="img/barbie1.jpg"><h3>Barbie Rosa</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/barbie2.jpg"><h3>Barbie Fashion</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/barbie3.jpg"><h3>Ken</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/barbie4.jpg"><h3>Barbie Vintage</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+<!-- 🔹 Grupo 12: Dandadan -->
+<div class="grupo">
+  <img src="img/portada-dandadan.jpg" alt="Portada Dandadan" class="portada-categoria">
+  <div class="grupo-header">
+    <span>Dandadan</span>
+    <button onclick="toggleGrupo('grupo14')">Ver Stickers</button>
+  </div>
+  <div class="grupo-contenido" id="grupo14">
+    <div class="producto"><img src="img/dandadan1.jpg"><h3>Momo Ayase</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/dandadan2.jpg"><h3>Okarun</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/dandadan3.jpg"><h3>Aira Shiratori</h3><p>$1000</p><button>Añadir</button></div>
+    <div class="producto"><img src="img/dandadan4.jpg"><h3>Turbo Granny</h3><p>$1000</p><button>Añadir</button></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- 🔹 Sección de misión y visión -->
+<section class="mision-vision">
+  <div class="contenido-mv">
+    <h2>Nuestra Misión</h2>
+    <p>En Taggy Stickers buscamos inspirar creatividad y diversión a través de stickers personalizados, ofreciendo calidad, innovación y cercanía con cada cliente.</p>
+  </div>
+  <div class="contenido-mv">
+    <h2>Nuestra Visión</h2>
+    <p>Convertirnos en la marca de stickers más reconocida de América Latina, expandiendo nuestra creatividad a cada rincón del mundo.</p>
+  </div>
+</section>
+
+<!-- 🔹 Redes sociales -->
+<div class="redes-sociales-final">
+  <a href="https://www.instagram.com/taggy.sas?igsh=bm5oOTM1OXZ5eDhr" target="_blank">
+    <img src="img/instagram.png" alt="Instagram">
+  </a>
+  <a href="https://www.tiktok.com/@taggy..sas?_t=ZS-8yWnpWkiE0Q&_r=1" target="_blank">
+    <img src="img/tiktok.png" alt="TikTok">
+  </a>
+</div>
+
+<script>
+  function toggleGrupo(id) {
+    const grupo = document.getElementById(id);
+    grupo.classList.toggle('activo');
+  }
+</script>
+
+<!-- 🔹 Mantén el script principal con toda la lógica -->
+<script src="script.js" defer></script>
+
+<!-- 🔹 Script adicional SOLO para conectar botones "Añadir" -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".producto button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const card = btn.closest(".producto");
+        const nombre = card.querySelector("h3").textContent;
+        const precio = parseInt(card.querySelector("p").textContent.replace("$","")) || 0;
+        const img = card.querySelector("img").src;
+        const id = nombre.toLowerCase().replace(/\s+/g,"-");
+        const producto = { id, nombre, precio, img };
+        agregarAlCarrito(producto, 1);
+        notificar("🧡 Agregado al carrito", "ok");
+      });
+    });
+
+    // 👇 Esta línea vuelve a pintar el carrito y engancha los botones de +/- y eliminar
+    renderCarrito();
+  });
+</script>
